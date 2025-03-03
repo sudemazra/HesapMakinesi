@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button butonEsittir = findViewById(R.id.butonEsittir);
         Button butonTemizleme = findViewById(R.id.butonTemizleme);
+        Button butonUssu = findViewById(R.id.butonUssu);
+        Button butonKarekok = findViewById(R.id.butonKarekok);
+        Button butonFakt = findViewById(R.id.butonFaktoriyel);
 
         View.OnClickListener numberClickListener = v -> {
             Button buton = (Button) v;
@@ -107,5 +110,32 @@ public class MainActivity extends AppCompatActivity {
             currentInput = String.valueOf(result);
             editText.setText(currentInput);
         });
+
+        butonUssu.setOnClickListener(v -> {
+            firstOperand = Double.parseDouble(currentInput);
+            operator = "x^y";
+            currentInput = "";
+        });
+
+        butonKarekok.setOnClickListener(v -> {
+            double number = Double.parseDouble(currentInput);
+            currentInput = String.valueOf(Math.sqrt(number)); // Calculate square root
+            editText.setText(currentInput);
+        });
+
+        butonFakt.setOnClickListener(v -> {
+            int number = Integer.parseInt(currentInput);
+            currentInput = String.valueOf(factorial(number)); // Calculate factorial
+            editText.setText(currentInput);
+        });
+
+    }
+
+    private int factorial(int n) {
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
     }
 }
