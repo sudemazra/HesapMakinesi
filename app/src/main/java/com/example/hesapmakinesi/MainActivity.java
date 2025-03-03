@@ -3,38 +3,109 @@ package com.example.hesapmakinesi;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
+    String currentInput = "";
+    String operator = "";
+    double firstOperand = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        //EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+       /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
 
-            editText = (EditText) findViewById(R.id.sonucText);
-            editText.setShowSoftInputOnFocus(false); //klavye açılmasın diye
-        }
+        });*/
+         editText = findViewById(R.id.sonucText);
 
-        public void Yazdir(View view) {
-            switch (view.getId()) {
-                case R.id.buttonTemizle
+        Button sayi0 = findViewById(R.id.sayi0);
+        Button sayi1 = findViewById(R.id.sayi1);
+        Button sayi2 = findViewById(R.id.sayi2);
+        Button sayi3 = findViewById(R.id.sayi3);
+        Button sayi4 = findViewById(R.id.sayi4);
+        Button sayi5 = findViewById(R.id.sayi5);
+        Button sayi6 = findViewById(R.id.sayi6);
+        Button sayi7 = findViewById(R.id.sayi7);
+        Button sayi8 = findViewById(R.id.sayi8);
+        Button sayi9 = findViewById(R.id.sayi9);
+
+        Button butonArti = findViewById(R.id.butonArti);
+        Button butonEksi = findViewById(R.id.butonEksi);
+        Button butonCarpi = findViewById(R.id.butonCarpma);
+        Button butonBolme = findViewById(R.id.butonBolme);
+
+        Button butonEsittir = findViewById(R.id.butonEsittir);
+        Button butonTemizleme = findViewById(R.id.butonTemizleme);
+
+        View.OnClickListener numberClickListener = v -> {
+            Button buton = (Button) v;
+            currentInput += buton.getText().toString();
+            editText.setText(currentInput);
+        };
+
+        sayi0.setOnClickListener(numberClickListener);
+        sayi1.setOnClickListener(numberClickListener);
+        sayi2.setOnClickListener(numberClickListener);
+        sayi3.setOnClickListener(numberClickListener);
+        sayi4.setOnClickListener(numberClickListener);
+        sayi5.setOnClickListener(numberClickListener);
+        sayi6.setOnClickListener(numberClickListener);
+        sayi7.setOnClickListener(numberClickListener);
+        sayi8.setOnClickListener(numberClickListener);
+        sayi9.setOnClickListener(numberClickListener);
+
+        View.OnClickListener operatorClickListener = v -> {
+            Button button = (Button) v;
+            operator = button.getText().toString();
+            firstOperand = Double.parseDouble((currentInput));
+            currentInput = "";
+        };
+
+        butonArti.setOnClickListener(operatorClickListener);
+        butonEksi.setOnClickListener(operatorClickListener);
+        butonCarpi.setOnClickListener(operatorClickListener);
+        butonBolme.setOnClickListener(operatorClickListener);
+
+        butonTemizleme.setOnClickListener(v -> {
+            currentInput="";
+            firstOperand = 0;
+            operator = "";
+            editText.setText("0");
+        });
+
+        butonEsittir.setOnClickListener(v -> {
+            double secondOperand = Double.parseDouble(currentInput);
+            double result = 0;
+
+            switch (operator) {
+                case "+":
+                    result = firstOperand + secondOperand;
+                    break;
+                case "-":
+                    result = firstOperand - secondOperand;
+                    break;
+                case "*":
+                    result = firstOperand * secondOperand;
+                    break;
+                case"/":
+                    if (secondOperand != 0) {
+                        result = firstOperand / secondOperand;
+                    } else {
+                        result = Double.NaN; //error versin yani
+                    }
+                    break;
             }
 
-        }
-
-        );
-
+            currentInput = String.valueOf(result);
+            editText.setText(currentInput);
+        });
     }
 }

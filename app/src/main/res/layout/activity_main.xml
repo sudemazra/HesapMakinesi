@@ -10,7 +10,6 @@
     <Button
         android:id="@+id/sayi5"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="5"
@@ -24,7 +23,6 @@
     <Button
         android:id="@+id/butonUssu"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="x^y"
@@ -38,7 +36,6 @@
     <Button
         android:id="@+id/butonArti"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="+"
@@ -52,7 +49,6 @@
     <Button
         android:id="@+id/butonTemizleme"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="C"
@@ -66,7 +62,6 @@
     <Button
         android:id="@+id/sayi7"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:backgroundTint="#CDDC39"
@@ -83,7 +78,6 @@
     <Button
         android:id="@+id/sayi0"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="74dp"
         android:text="0"
@@ -97,7 +91,6 @@
     <Button
         android:id="@+id/sayi1"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="1"
@@ -111,7 +104,6 @@
     <Button
         android:id="@+id/sayi4"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="4"
@@ -125,12 +117,11 @@
     <Button
         android:id="@+id/sayi3"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="3"
         app:layout_constraintBottom_toTopOf="@+id/butonEsittir"
-        app:layout_constraintEnd_toStartOf="@+id/butonCarpı"
+        app:layout_constraintEnd_toStartOf="@+id/butonCarpma"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sayi2"
         app:layout_constraintTop_toBottomOf="@+id/sayi6"
@@ -139,7 +130,6 @@
     <Button
         android:id="@+id/butonKarekok"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="√"
@@ -153,7 +143,6 @@
     <Button
         android:id="@+id/sayi2"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="2"
@@ -167,21 +156,19 @@
     <Button
         android:id="@+id/butonFaktoriyel"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="n!"
         app:layout_constraintBottom_toTopOf="@+id/butonKarekok"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/butonCarpı"
+        app:layout_constraintStart_toEndOf="@+id/butonCarpma"
         app:layout_constraintTop_toBottomOf="@+id/butonUssu"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/butonNokta"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="."
@@ -195,7 +182,6 @@
     <Button
         android:id="@+id/butonEsittir"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="="
@@ -209,7 +195,6 @@
     <Button
         android:id="@+id/sayi6"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="6"
@@ -223,11 +208,10 @@
     <Button
         android:id="@+id/butonEksi"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="-"
-        app:layout_constraintBottom_toTopOf="@+id/butonCarpı"
+        app:layout_constraintBottom_toTopOf="@+id/butonCarpma"
         app:layout_constraintEnd_toStartOf="@+id/butonUssu"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sayi6"
@@ -237,7 +221,6 @@
     <Button
         android:id="@+id/sayi9"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="9"
@@ -251,7 +234,6 @@
     <Button
         android:id="@+id/butonBolme"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="/"
@@ -259,13 +241,12 @@
         app:layout_constraintEnd_toStartOf="@+id/butonKarekok"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/butonEsittir"
-        app:layout_constraintTop_toBottomOf="@+id/butonCarpı"
+        app:layout_constraintTop_toBottomOf="@+id/butonCarpma"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/sayi8"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="8"
@@ -277,9 +258,8 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/butonCarpı"
+        android:id="@+id/butonCarpma"
         style="@style/Widget.AppCompat.Button"
-        android:onClick="Yazdir"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:text="*"
